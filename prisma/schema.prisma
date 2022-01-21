@@ -1,0 +1,30 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "mysql"
+    url      = env("CONNECTION")
+}
+
+model Server {
+    id         Int       @id @default(autoincrement())
+    serverId   String
+    channelId  String
+    serverName String
+    createdAt  DateTime  @default(now())
+    Message    Message[]
+}
+
+model Message {
+    id        Int      @id @default(autoincrement())
+    messageId String
+    author    String
+    content   String?
+    server    Server   @relation(fields: [serverId], references: [id])
+    serverId  Int
+    createdAt DateTime @default(now())
+}

@@ -1,0 +1,21 @@
+{
+  "name": "d2d-bot",
+  "version": "0.1.0",
+  "description": "DAO to DAO communication bot",
+  "main": "index.js",
+  "author": "fiigmnt",
+  "license": "MIT",
+  "engines": {
+    "node": "16.x"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "^13.3.1",
+    "@prisma/client": "^3.5.0"
+  },
+  "devDependencies": {
+    "prisma": "^3.5.0"
+  }
+}
